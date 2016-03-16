@@ -359,6 +359,11 @@ include '../documentation-main/documentation_header.php';
             <th>getFirstRenderedRow() getFirstVirtualRenderedRow()</th>
             <td>Gets the index of the first and last rendered rows.</td>
         </tr>
+        <tr>
+            <th>reloadPage()</th>
+            <td>Reloads the current page from the datasource if rowModelType is 'pagination'. Purges the
+                cache and reloads all pages currently in the view if rowModelType is 'virtual'.</td>
+        </tr>
     </table>
 
     <h2>
