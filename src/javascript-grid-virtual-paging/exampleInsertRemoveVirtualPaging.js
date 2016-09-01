@@ -48,20 +48,6 @@ function liveInsertItemsAt2(count) {
 
 function insertItemsAt2AndRefresh(count) {
     insertItemsAt2(count);
-
-    // if the data has stopped looking for the last row, then we need to adjust the
-    // row count to allow for the extra data, otherwise the grid will not allow scrolling
-    // to the last row. eg if we have 1000 rows, scroll all the way to the bottom (so
-    // maxRowFound=true), and then add 5 rows, the virtualRowCount needs to be adjusted
-    // to 1005, so grid can scroll to the end. the grid does NOT do this for you in the
-    // refreshVirtualPageCache() method, as this would be assuming you want to do it which
-    // is not true, maybe the row count is constant and you just want to refresh the details.
-    var maxRowFound = gridOptions.api.isMaxRowFound();
-    if (maxRowFound) {
-        var virtualRowCount = gridOptions.api.getVirtualRowCount();
-        gridOptions.api.setVirtualRowCount(virtualRowCount + count);
-    }
-
     // get grid to refresh the data
     gridOptions.api.refreshVirtualPageCache();
 }
@@ -141,13 +127,9 @@ var dataSource = {
                 var itemCopy = JSON.parse(JSON.stringify(item));
                 rowsThisPage[i] = itemCopy;
             }
-            // if on or after the last page, work out the last row.
-            var lastRow = -1;
-            if (allOfTheData.length <= params.endRow) {
-                lastRow = allOfTheData.length;
-            }
+
             // call the success callback
-            params.successCallback(rowsThisPage, lastRow);
+            params.successCallback(rowsThisPage, allOfTheData.length);
         }, 500);
     }
 };
