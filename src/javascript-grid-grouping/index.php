@@ -77,7 +77,7 @@ include '../documentation-main/documentation_header.php';
         </tr>
         <tr>
             <th>groupMultiAutoColumn</th>
-            <td>If using auto column, set to true to have each group in it's own column separate column, eg
+            <td>If using auto column, set to true to have each group in its own column separate column, eg
                 if group by Country then Year, two auto columns will be created, one for country and one for year.</td>
         </tr>
         <tr>
@@ -220,7 +220,7 @@ gridOptions.groupColumnDef = {
 
     <h4>Option 3 - No Grid Swapping of Columns:</h4>
     <p>
-        Tell the grid you don't want it's help, that you will provide the group column yourself, included
+        Tell the grid you don't want its help, that you will provide the group column yourself, included
         in the main list of columns. If you use this, make sure you do have at least one column showing the
         group, otherwise the grid will not make sense as you will have no way to expand / contract the groups.
     </p>
@@ -342,7 +342,7 @@ var colDefs = {
         Below shows an example of this. Notice that each group row has
         <a href="../javascript-grid-aggregation/">aggregated values</a>. When the group
         is closed, the group row shows the aggregated result. When the group is open,
-        the group row is removed and in it's place the child rows are displayed.
+        the group row is removed and in its place the child rows are displayed.
         To allow closing the group again, the group column knows to display the parent
         group in the group column only (so you can click on the icon to close the group).
     </p>

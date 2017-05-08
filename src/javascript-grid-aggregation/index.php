@@ -1,7 +1,7 @@
 <?php
 $key = "Aggregation";
 $pageTitle = "ag-Grid Aggregation";
-$pageDescription = "One of the most powerful features of ag-Grid is it's ability to aggregate data. Learn how to aggregate using ag-Grid";
+$pageDescription = "One of the most powerful features of ag-Grid is its ability to aggregate data. Learn how to aggregate using ag-Grid";
 $pageKeyboards = "ag-Grid JavaScript Grid Aggregation";
 $pageGroup = "feature";
 include '../documentation-main/documentation_header.php';
@@ -98,9 +98,9 @@ function myCustomAggFunc(values) {
     <b>Average on Age Column</b>
 
     <p>
-        The age columns is aggregated a second time with a custom average function.
+        The age column is aggregated a second time with a custom average function.
         The average function also needs to know if it is working with leaf nodes or
-        group nodes, as if it's group nodes then the average is weighted.
+        group nodes, and if it's group nodes then the average is weighted.
     </p>
 
     <p>

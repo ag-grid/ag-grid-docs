@@ -40,7 +40,7 @@ columnDefinition = {
             Setting it separatly here allows for the value to be rendered differently in the filter.</li>
         <li><b>cellHeight:</b> The height of the cell.</li>
         <li><b>values:</b> The values to display in the filter. If this is not set, then the filter will
-            takes it's values from what is loaded in the table. Setting it allows you to set values where a) the
+            takes its values from what is loaded in the table. Setting it allows you to set values where a) the
             value may not be present in the list (for example, if you want to show all states in America so
             that the user is not confused by missing states, even though states are missing from the dataset
             in the grid) and b) the list is not available (happens when doing server side filtering in pagination

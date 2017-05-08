@@ -104,7 +104,7 @@ colDef.cellRenderer = function(params) {
     destroy?(): void;
 
     <span class="codeComment">// Optional - Get the cell to refresh. If this method is not provided, then when refresh is needed, the grid</span>
-    <span class="codeComment">// will remove the component from the DOM and create a new component in it's place with the new values.</span>
+    <span class="codeComment">// will remove the component from the DOM and create a new component in its place with the new values.</span>
     refresh?(params: any): void;
 }</pre>
 

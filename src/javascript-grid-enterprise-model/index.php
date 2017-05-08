@@ -1,7 +1,7 @@
 <?php
 $key = "Enterprise";
 $pageTitle = "ag-Grid New Enterprise Model";
-$pageDescription = "ag-Grid is going bringing datagrids to the next level with it's Enterprise Data Model, allowing slicing and dicing of data driven by your UI.";
+$pageDescription = "ag-Grid is going bringing datagrids to the next level with its Enterprise Data Model, allowing slicing and dicing of data driven by your UI.";
 $pageKeyboards = "ag-Grid Enterprise Row Model";
 $pageGroup = "row_models";
 include '../documentation-main/documentation_header.php';
@@ -98,7 +98,7 @@ interface IEnterpriseDatasource {
     <span class="codeComment">// success callback, pass the rows back the grid asked for</span>
     successCallback(rowsThisPage: any[]): void;
 
-    <span class="codeComment">// fail callback, tell the grid the call failed so it can adjust it's state</span>
+    <span class="codeComment">// fail callback, tell the grid the call failed so it can adjust its state</span>
     failCallback(): void;
 }
 </pre>
@@ -233,7 +233,7 @@ export interface ColumnVO {
         problem as the grid will ask from 250,000 items.
         It is our plan to implement infinite scrolling (similar to the
         <a href="../javascript-grid-virtual-paging/">infinite scrolling row model</a>)
-        for each level of the grouping tree, so each group node will effectively have it's
+        for each level of the grouping tree, so each group node will effectively have its
         own infinite scroll, so the grid will in theory be able to handle an infinite
         amount of data, no matter how many children a particular group has, and have this
             infinite amount of data sliced and diced using the Enterprise Row Model.
@@ -241,7 +241,7 @@ export interface ColumnVO {
         <li><b>Caching Expiring of Data:</b> As a follow on from implementing infinite
         scrolling, data will also need to be cached and purged. Purging is important
         so the user is able to continually open and close groups with the browser
-        indefinitely filling it's memory.</li>
+        indefinitely filling its memory.</li>
         <li><b>Server Side Support:</b> Above we presented a demo of using MySQL as a client
         side database for generating SQL on the fly to do dynamic slicing and dicing of
         data from a Relational SQL database. We could extend our server side implementations
