@@ -29,7 +29,7 @@ include '../documentation-main/documentation_header.php';
 
     <p>
         You have the option (but not forced) of using React Components internally in the grid for rendering,
-        editing and filtering. The example has to applications as follows:
+        editing and filtering. The example has two applications as follows:
     <ul>
         <li>Standard - the standard is shown below and demonstrates using React Components for renderers, editors
             and filters.
