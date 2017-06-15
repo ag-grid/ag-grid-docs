@@ -42,8 +42,7 @@ function createRowData(id) {
 
 function liveInsertItemsAt2(count) {
     var newDataItems = insertItemsAt2(count);
-    // here we stick the data directly into the grid
-    gridOptions.api.insertItemsAtIndex(2, newDataItems);
+    gridOptions.api.updateRowData({addIndex: 2, add: newDataItems});
 }
 
 function insertItemsAt2AndRefresh(count) {
@@ -63,7 +62,7 @@ function insertItemsAt2AndRefresh(count) {
     }
 
     // get grid to refresh the data
-    gridOptions.api.refreshInfinitePageCache();
+    gridOptions.api.refreshInfiniteCache();
 }
 
 function insertItemsAt2(count) {
@@ -78,15 +77,15 @@ function insertItemsAt2(count) {
 
 function removeItem(start, limit) {
     allOfTheData.splice(start, limit);
-    gridOptions.api.refreshInfinitePageCache();
+    gridOptions.api.refreshInfiniteCache();
 }
 
 function refreshCache() {
-    gridOptions.api.refreshInfinitePageCache();
+    gridOptions.api.refreshInfiniteCache();
 }
 
 function purgeCache() {
-    gridOptions.api.purgeInfinitePageCache();
+    gridOptions.api.purgeInfiniteCache();
 }
 
 function setRowCountTo200() {
@@ -113,7 +112,7 @@ function setPricesLow() {
 
 function printCacheState() {
     console.log('*** Cache State ***');
-    console.log(gridOptions.api.getInfinitePageState());
+    console.log(gridOptions.api.getCacheBlockState());
 }
 
 function jumpTo500() {
@@ -161,7 +160,7 @@ var gridOptions = {
     rowModelType: 'infinite',
     datasource: dataSource,
 
-    maxPagesInCache: 2,
+    maxBlocksInCache: 2,
     infiniteInitialRowCount: 500,
     maxConcurrentDatasourceRequests: 2,
 

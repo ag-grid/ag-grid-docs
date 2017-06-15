@@ -57,6 +57,84 @@ include '../documentation-main/documentation_header.php';
 
     <show-example example="exampleWidthAndHeight"></show-example>
 
+    <h2>Grid Layout</h2>
+
+    <p>
+        There is a property <i>gridLayout</i> which changes how the grid is laid into the DOM.
+        By default the grid will have horizontal and vertical scrolls which will meet your needs
+        95 of the time. So don't change the <i>gridLayout</i> property unless you want one
+        of the following:
+    </p>
+
+    <p>
+        <ul>
+            <li><b>Auto Height: </b>The auto height (explained below) allows the grid to resize based
+            on the number of rows so that there is no vertical scrolls. Use this if you have relatively
+            few rows in your grid and want to pack them into your webpage (so that there is no blank
+            area in the screen where the grid is bigger than needed for the rows that you have).</li>
+            <li><b>For Print: </b>The <a href="../javascript-grid-for-print/">for print</a> will have
+            no scrolls, very bad for performance (as a large grid will create a lot of DOM) however
+            ideal if you want to print the grid, as it will remove all scrolls and pinned areas,
+            so that every element is rendered into the DOM.</li>
+        </ul>
+    </p>
+
+    <h2 id="autoHeight">Auto Height Grid</h2>
+
+    <p>
+        Most applications will give the grid a fixed height and then the grid will provide vertical scrolls
+        to navigate through the rows. This is the best way to view large data sets, as it allows the grid to
+        only render rows that are currently visible on the screen. For example if you can only see 20 rows,
+        then the grid will only render 20 rows, and as you scroll down, rows will be removed and new rows drawn.
+    </p>
+
+    <p>
+        Some applications will want to render all the rows in the grid and not use and scrolls inside the grid.
+        This will give bad performance if many rows (ie if you render 10,000 rows into the DOM, your browser will
+        probably crash!), however for 10 or 20 rows, this may be preferred.
+    </p>
+
+    <p>
+        To have the grid auto-size to fit the provided rows, set the property <code>domLayout='autoHeight'</code>
+    </p>
+
+    <p>
+        The example below demonstrates the autoHeight feature. Notice the following:
+        <ul>
+            <li>As you set different numbers of rows into the grid, the grid will resize it's height to just fit the rows.</li>
+            <li>As the grid height exceeds the height of the browser, you will need to use the browser vertical scroll
+            to view data (or the iFrames scroll if you are looking at the example embedded below).</li>
+            <li>The height will also adjust as you filter, to add and remove rows.</li>
+            <li>If you have floating rows, the grid will size to accommodate the floating rows.</li>
+            <li>Vertical scrolling will not happen, however horizontal scrolling, including pinned columns, will work as normal.</li>
+        </ul>
+    </p>
+
+    <note>
+        The following test is best viewed if you open it in a new tab, so it is obvious that there are no scroll bars.
+        Note that if you use the example inlined the scroll bars shown are for the containing iframe, not the grid.
+    </note>
+    <show-example example="exampleAutoHeight"></show-example>
+
+    <h3>Animation with Auto Height</h3>
+
+    <p>
+        The autoHeight will do a complete refresh of the grid rows after any sort, filter or row group open
+        / close. This also means row animation will not work with autoHeight.
+        This is because the autoHeight feature just places the rows into the DOM and lets the browser lay them
+        out naturally. Under normal operation (when not using autoHeight) the grid explicitly positions the rows
+        using top pixel location - which is needed for the animations to work.
+    </p>
+
+    <h4>Full Width and Auto Height</h4>
+
+    <p>
+        The <a href="../javascript-grid-full-width-rows/">fullWidth</a> feature, when used with autoHeight,
+        will always <a href="../javascript-grid-full-width-rows/#embeddedFullWidth">embed the full width rows</a>.
+        This means if using fullWidth, the fullWidth rows will scroll horizontally with the other rows and if
+        pinning, the fullWidth row will be split into the pinned sections.
+    </p>
+
 </div>
 
 <?php include '../documentation-main/documentation_footer.php';?>

@@ -26,11 +26,13 @@ function getContextMenuItems(params) {
     var result = [
         { // custom item
             name: 'Alert ' + params.value,
-            action: function () {window.alert('Alerting about ' + params.value); }
+            action: function () {window.alert('Alerting about ' + params.value); },
+            cssClasses: ['redFont', 'bold']
         },
         { // custom item
             name: 'Always Disabled',
-            disabled: true
+            disabled: true,
+            tooltip: 'Very long tooltip, did I mention that I am very long, well I am! Long!  Very Long!'
         },
         {
             name: 'Country',

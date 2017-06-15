@@ -37,6 +37,8 @@
             <li><a class="frameworkDropdown-link" data-id="javascript" href="#"><img src="/images/javascript_small.png"
                                                                                      alt="JavaScript"/> Just JavaScript
                     (no framework)</a></li>
+            <li><a class="frameworkDropdown-link" data-id="react" href="#"><img src="/images/svg/react.alt.svg"
+                                                                                width="22" alt="React"/> React</a></li>
             <li><a class="frameworkDropdown-link" data-id="angular" href="#"><img src="/images/angularjs_small.png"
                                                                                   alt="Angular 1"/> Angular (Angular 2
                     and later)</a></li>
@@ -45,8 +47,6 @@
                     (Angular 1)</a></li>
             <li><a class="frameworkDropdown-link" data-id="aurelia" href="#"><img src="/images/aurelia_small.png"
                                                                                   alt="Aurelia"/> Aurelia</a></li>
-            <li><a class="frameworkDropdown-link" data-id="react" href="#"><img src="/images/svg/react.alt.svg"
-                                                                                width="22" alt="React"/> React</a></li>
             <li><a class="frameworkDropdown-link" data-id="vue" href="#"><img src="/images/vue_small.png" width="22"
                                                                               alt="Vue"/> Vue JS</a></li>
             <li><a class="frameworkDropdown-link" data-id="webcomponents" href="#"><img
@@ -82,6 +82,10 @@
         menuItem(1, 'Getting Started Javascript', 'Javascript', 'best-javascript-data-grid/');
     }
 
+    if (isFrameworkReact()) {
+        menuItem(1, 'Getting Started React', 'ReactJS', 'best-react-data-grid/');
+    }
+
     if (isFrameworkAngular2()) {
         menuItemCollapsibleParent(1, 'Getting Started ng2', 'Angular 2.x/4.x', 'best-angular-2-data-grid/', 'angularParent');
         menuItemCollapsibleChild(2, 'Angular CLI', 'Angular CLI', 'ag-grid-angular-angularcli/', 'angularParent', 'angularChild', 'start');
@@ -93,10 +97,6 @@
 
     if (isFrameworkAngular1()) {
         menuItem(1, 'Getting Started ng1', 'AngularJS 1.x', 'best-angularjs-data-grid/');
-    }
-
-    if (isFrameworkReact()) {
-        menuItem(1, 'Getting Started React', 'ReactJS', 'best-react-data-grid/');
     }
 
     if (isFrameworkVue()) {
@@ -172,6 +172,7 @@
     menuItemWithIcon('enterprise.png', 0, 'Range Selection', 'Range Selection', 'javascript-grid-range-selection/');
     menuItem(0, 'Resizing', 'Column Resizing', 'javascript-grid-resizing/');
     menuItem(0, 'Pinning', 'Column Pinning', 'javascript-grid-pinning/');
+    menuItem(0, 'Column Header', 'Column Header', 'javascript-grid-column-header/');
     menuItem(0, 'Grouping Columns', 'Grouping Columns', 'javascript-grid-grouping-headers/');
     menuItem(0, 'Tree Data', 'Tree Data', 'javascript-grid-tree/');
     menuItem(0, 'Row Height', 'Row Height', 'javascript-grid-row-height/');
@@ -182,8 +183,9 @@
     menuItem(0, 'Cell Editing', 'Cell Editing', 'javascript-grid-cell-editing/');
     menuItem(0, 'Pagination', 'Pagination', 'javascript-grid-pagination/');
     menuItem(0, 'Context', 'Context', 'javascript-grid-context/');
-    menuItem(0, 'InsertRemove', 'Insert & Remove', 'javascript-grid-insert-remove/');
-    menuItem(0, 'Refresh', 'Data Refresh', 'javascript-grid-refresh/');
+    menuItem(0, 'AccessingData', 'Accessing Data', 'javascript-grid-accessing-data/');
+    menuItem(0, 'DataUpdate', 'Data Update', 'javascript-grid-data-update/');
+    menuItem(0, 'Refresh', 'View Refresh', 'javascript-grid-refresh/');
     menuItem(0, 'Animation', 'Animation', 'javascript-grid-animation/');
     menuItem(0, 'Keyboard Navigation', 'Keyboard Navigation', 'javascript-grid-keyboard-navigation/');
     menuItem(0, 'Internationalisation', 'Internationalisation', 'javascript-grid-internationalisation/');
@@ -230,7 +232,7 @@
     menuItem(0, 'In Memory', 'In Memory', 'javascript-grid-in-memory/');
     menuItem(0, 'Infinite Scrolling', 'Infinite Scrolling', 'javascript-grid-infinite-scrolling/');
     menuItemWithIcon('enterprise.png', 0, 'Viewport', 'Viewport', 'javascript-grid-viewport/');
-    menuItemWithIcon('lab.png', 0, 'Enterprise', 'Enterprise', 'javascript-grid-enterprise-model/');
+    menuItemWithIcon('enterprise.png', 0, 'Enterprise', 'Enterprise', 'javascript-grid-enterprise-model/');
     ?>
 </div>
 
@@ -293,6 +295,18 @@
     <?php
 
     menuItem(0, 'ag-Grid Examples', 'ag-Grid Examples', 'javascript-grid-examples/');
+    if (isFrameworkReact() || isFrameworkAll()) {
+        menuItemWithIcon('react_small.png', 1, 'React Examples', 'React Examples', 'example-react/', true);
+        menuItem(2, 'React Rich Grid', 'Rich Grid', 'example-react-rich-grid/');
+        menuItem(2, 'React Dynamic', 'Cell Renderers', 'example-react-dynamic/');
+        menuItem(2, 'React Editor', 'Editor Component', 'example-react-editor/');
+        menuItem(2, 'React Filter', 'Filter Component', 'example-react-filter/');
+        menuItem(2, 'React Floating Row', 'Floating Rows', 'example-react-floating-row/');
+        menuItem(2, 'React Full Width', 'Full Width Rows', 'example-react-full-width-rows/');
+        menuItem(2, 'React Group Row', 'Group Rows', 'example-react-grouped-row/');
+        menuItem(2, 'React MasterDetail', 'Master/Detail', 'example-react-master-detail/');
+        menuItem(2, 'React Redux', 'Redux Examples', 'example-react-redux/');
+    }
     if (isFrameworkAngular2() || isFrameworkAll()) {
         menuItemWithIcon('angular2_small.png', 1, 'Angular Examples', 'Angular Examples', 'example-angular/', true);
         menuItem(2, 'Angular Rich Grid', 'Rich Grid', 'example-angular-rich-grid/');
@@ -309,6 +323,7 @@
     menuItem(1, 'Styled Report', 'Styled Report', 'example-account-report/');
     menuItem(1, 'File Browser', 'File Browser', 'example-file-browser/');
     menuItem(1, 'Expressions and Context', 'Expressions', 'example-expressions-and-context/');
+    menuItem(1, 'Gallery', 'Gallery', 'example-gallery/');
     ?>
 </div>
 
@@ -372,6 +387,22 @@
         stars make projects look great. Please help, donate a star, it's free.
     </div>
 </div>
+
+
+<div style="border: 1px solid #e8e8e8; border-radius: 3px; padding: 10px; margin-top: 10px;">
+
+    <a href="../ag-grid-partners-with-webpack/">
+        <img src="../images/ag_grid_and_webpack_small.png"/>
+    </a>
+
+
+    <div>
+        Read about <a href="../ag-grid-partners-with-webpack/">ag-Grid's Partnership
+        with webpack</a>.
+    </div>
+
+</div>
+
 
 <div style="border: 1px solid #e8e8e8; border-radius: 3px; padding: 10px; margin-top: 10px;">
 

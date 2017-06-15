@@ -18,9 +18,9 @@ include '../documentation-main/documentation_header.php';
     <note>
         This page discusses sorting outside of the context of paging. To see how to implement server
         side sorting, see the sections
-        <a href="/javascript-grid-pagination/">pagination</a>
+        <a href="../javascript-grid-pagination/">pagination</a>
         and
-        <a href="/javascript-grid-virtual-paging/">virtual paging</a>
+        <a href="../javascript-grid-virtual-paging/">virtual paging</a>
     </note>
 
     <h3 id="enable-sorting">Enable Sorting</h3>
@@ -52,8 +52,9 @@ colDef.comparator = function (valueA, valueB, nodeA, nodeB, isInverted) {
         Example below shows the following:
         <ul>
             <li>Default sorting on the Athlete column.</li>
-            <li>No sort icon on the Year column.</li>
-            <li>Custom sorting on the Date column.</li>
+            <li>When the year column is not sorted, it shows a custom icon, (up/down arrow).</li>
+            <li>The date column has strings as the row data, there is custom comparator so that when you sort this column
+            it sorts it as dates, not as strings.</li>
         </ul>
     </p>
 
@@ -155,35 +156,19 @@ colDef.comparator = function (valueA, valueB, nodeA, nodeB, isInverted) {
     <h3 id="sorting-groups">Sorting Groups</h3>
 
     <p>
-        The grid sorts columns ignoring the groups, even if the column is displaying group data. This
-        decoupling, although good design, has the drawback that the column doesn't realise it also
-        needs to sort the groups. To get a column to sort the groups when sorting, you have to
-        provide a custom comparator to the column. A custom comparator for groups is provided
-        by agGrid and can be configured like the following:
+        The grid sorts using a default comparator for grouped columns, if you want to specify your own, you can do
+        so specifying it in the colDef:
     </p>
 
-    <pre><span class="codeComment">// when using the ag-Grid bundle with global agGrid variable:</span>
+    <pre>
 var groupColumn = {
     headerName: "Group",
-    comparator: agGrid.defaultGroupComparator, <span class="codeComment">// this is the important bit</span>
-    cellRenderer: {
-        renderer: "group",
-    }
-};
-
-<span class="codeComment">// when using CommmonJS</span>
-import {defaultGroupComparator} from 'ag-grid/main';
-var groupColumn = {
-    headerName: "Group",
-    comparator: defaultGroupComparator, <span class="codeComment">// this is the important bit</span>
+    comparator: [yourOwnComparator], <span class="codeComment">// this is the important bit</span>
     cellRenderer: {
         renderer: "group",
     }
 };
     </pre>
-
-    <p>You only need to worry about this if you are providing your own grouping column. If using
-    the grid auto-group column, this comparator is used by default.</p>
 
 </div>
 

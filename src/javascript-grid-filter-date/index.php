@@ -14,7 +14,7 @@ include '../documentation-main/documentation_header.php';
 </p>
 
 <note>
-    <p>The date filter uses <a href="/javascript-grid-date-component/">your own date component</a> if you have one registered automatically. So both in the rich filter
+    <p>The date filter uses <a href="../javascript-grid-date-component/">your own date component</a> if you have one registered automatically. So both in the rich filter
         and the floating filter it will be used to let the user pick dates. Isn't that nice :)</p>
 </note>
 
@@ -47,6 +47,10 @@ A date filter can take the following parameters:
     <li><b>filterOptions:</b> If specified, limits the amount of options presented in the filter UI, it must be
         a string array containing some of the following values  {equals, notEquals, lessThanOrEqual, greaterThan,
         greaterThanOrEqual, inRange}</li>
+    <li><b>defaultOption:</b> If specified, changes the default filter option to one of {equals, notEquals,
+        lessThanOrEqual, greaterThan, greaterThanOrEqual, inRange}. If not specified the default type is {equals},
+        if {equals} is not available because is removed using <i>filterOptions</i>, then the default
+        is the first item in the filterOptions</li>
 </ul>
 
 

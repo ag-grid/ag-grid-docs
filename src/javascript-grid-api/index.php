@@ -121,8 +121,12 @@ include '../documentation-main/documentation_header.php';
             <td>Set new rows into the grid.</td>
         </tr>
         <tr>
+            <th>updateRowData(transaction)</th>
+            <td>Update row data into the grid. Pass a transaction object with lists for add, remove and update.</td>
+        </tr>
+        <tr>
             <th>setDatasource(datasource)</th>
-            <td>Set new datasource into the gird. The grid will reset all paging
+            <td>Set new datasource into the grid. The grid will reset all paging
                 and load the first page. If you want to reset the paging but keep the
                 datasource, call this method with the same datasource.</td>
         </tr>
@@ -147,9 +151,9 @@ include '../documentation-main/documentation_header.php';
             </td>
         </tr>
         <tr>
-            <th>refreshInMemoryRowModel()</th>
+            <th>refreshInMemoryRowModel(params)</th>
             <td>
-                Does a complete refresh of the in memory row model. Shotgun approach for any row changes you have done.
+                Gets the In Memory Row Model to refresh, executing the grouping, filtering and sorting again.
             </td>
         </tr>
 
@@ -157,31 +161,10 @@ include '../documentation-main/documentation_header.php';
         <!-- Looping Through Data -->
         <!------------------->
         <tr>
-            <th colspan="2"><h2>Looping Through Data</h2></th>
+            <th colspan="2"><h2>Accessing Row Nodes</h2></th>
         </tr>
-        <tr>
-            <th>forEachNode(callback)</th>
-            <td>Iterates through each node (row) in the grid and calls the callback for each node.
-                This works similar to the 'forEach' method on a Javascript array. This is called
-                for every node, ignoring any filtering or sorting applied within the grid.
-                If pagination, then gets called for the currently loaded page.
-                If using infinite row model, then gets called for each page loaded in the page cache.</td>
-        </tr>
-        <tr>
-            <th>forEachNodeAfterFilter(callback)</th>
-            <td>Similar to forEachNode, except skips any filtered out data.</td>
-        </tr>
-        <tr>
-            <th>forEachNodeAfterFilterAndSort(callback)</th>
-            <td>Similar to forEachNode, except skips any filtered out data and each the callback
-                is called in the order the rows are displayed in the grid.</td>
-        </tr>
-        <tr>
-            <th>forEachLeafNode(callback)</th>
-            <td>Similar to forEachNode, except lists all the leaf nodes. This effectively goes
-                through all the data that you provided the grid before the grid did any grouping.</td>
-        </tr>
-
+        <?php include '../javascript-grid-accessing-data/accessingDataProperties.php' ?>
+        <?php printPropertiesRows($getRowNodeApi) ?>
 
         <!------------------->
         <!-- Selection -->
@@ -355,7 +338,7 @@ include '../documentation-main/documentation_header.php';
         <!-- Navigation -->
         <!------------------->
         <tr>
-            <th colspan="2"><h2>Groups</h2></th>
+            <th colspan="2"><h2>Navigation</h2></th>
         </tr>
         <tr>
             <th>getFocusedCell()</th>
@@ -564,6 +547,15 @@ include '../documentation-main/documentation_header.php';
         <?php include '../javascript-grid-pagination/paginationProperties.php' ?>
         <?php printPropertiesRows($paginationApi) ?>
 
+        <!------------------->
+        <!-- Pagination -->
+        <!------------------->
+        <tr>
+            <th colspan="2"><h2>Headers</h2></th>
+        </tr>
+        <?php include '../javascript-grid-column-header/headerHeightProperties.php' ?>
+        <?php printPropertiesRows($headerHeightApi) ?>
+
 
         <!------------------->
         <!-- Miscellaneous -->
@@ -605,12 +597,6 @@ include '../documentation-main/documentation_header.php';
             <td>Gets the value for a column for a particular rowNode (row).
                 This is useful if you want the raw value of a cell eg implementing your own csv export.
             </td>
-        </tr>
-        <tr>
-            <th>setHeaderHeight(value)</th>
-            <td>To set the header height (in pixels) after the grid has initialised. Set to null or undefined
-                to use the default of 25px. If havling multiple rows in the header, due to column grouping,
-                this will be the height of each row.</td>
         </tr>
         <tr>
             <th>destroy()</th>

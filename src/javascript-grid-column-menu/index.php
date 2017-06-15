@@ -77,6 +77,7 @@ include '../documentation-main/documentation_header.php';
         <li><b>resetColumns</b>: Reset column details. Always shown.</li>
         <li><b>expandAll</b>: Expand all groups. Only shown if grouping by at least one column.</li>
         <li><b>contractAll</b>: Contract all groups. Only shown if grouping by at least one column.</li>
+        <li><b>toolPanel</b>: Show the tool panel.</li>
     </ul>
 
     <p>
@@ -92,6 +93,19 @@ include '../documentation-main/documentation_header.php';
         if you want to.
     </p>
 
+    <h3>Menu Item Separators</h3>
+    <p>You can add menu item separators as follows:</p>
+    <pre>menuItems.push('separator')</pre>
+
+    <?php include './postProcessPopup.php';?>
+
+    <h3>Overriding Column Menu Width</h3>
+    <p>You can override the menu width by overriding the corresponding CSS:</p>
+
+    <pre>.ag-set-filter-list {
+    width: 500px !important;
+}</pre>
+
     <h3>Example Column Menu</h3>
 
     <p>
@@ -103,17 +117,11 @@ include '../documentation-main/documentation_header.php';
         <li>Age column provides custom items and adds one built in default item.</li>
         <li>Country column trims down the default items by removing values.</li>
         <li>All other columns return the default list.</li>
+        <li><code>postProcessPopup</code> is used on the Gold column to reposition the menu 25px lower.</li>
     </ul>
     </p>
 
     <show-example example="exampleColumnMenu" example-height="450px"></show-example>
-
-    <h3>Overriding Column Menu Width</h3>
-    <p>You can override the menu width by overriding the corresponding CSS:</p>
-
-    <pre>.ag-set-filter-list {
-    width: 500px !important;
-}</pre>
 
 </div>
 

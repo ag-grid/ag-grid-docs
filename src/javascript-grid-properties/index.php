@@ -183,11 +183,6 @@ include '../documentation-main/documentation_header.php';
                 over the column header.</td>
         </tr>
         <tr>
-            <th>suppressMenuHide</th>
-            <td>Set to true to always show the column menu button, rather than only showing when the mouse is
-                over the column header.</td>
-        </tr>
-        <tr>
             <th>groupColumnDef</th>
             <td>Allows specifying the group 'auto column' if you are not happy with the default. If grouping, this column def is included as the first column definition in the grid. If not grouping,
                 this column is not included.</td>
@@ -215,6 +210,10 @@ include '../documentation-main/documentation_header.php';
         <tr>
             <th>quickFilterText</th>
             <td>Rows are filtered using this text as a 'quick filter'.</td>
+        </tr>
+        <tr>
+            <th>cacheQuickFilter</th>
+            <td>Set to true to turn on the quick filter cache, used for a performance gain.</td>
         </tr>
         <tr>
             <th>sortingOrder</th>
@@ -284,10 +283,8 @@ include '../documentation-main/documentation_header.php';
         <tr>
             <th colspan="2"><h2>Headers</h2></th>
         </tr>
-        <tr>
-            <th>headerHeight</th>
-            <td>Height, in pixels, of the header row. The default is 25px. If grouping, each group row will be this height.</td>
-        </tr>
+        <?php include '../javascript-grid-column-header/headerHeightProperties.php' ?>
+        <?php printPropertiesRows($headerHeightProperties) ?>
         <!------------------->
         <!-- Row Grouping & Pivoting       -->
         <!------------------->
@@ -352,6 +349,10 @@ include '../documentation-main/documentation_header.php';
             <td>When true, column headers won't include the aggFunc, eg 'sum(Bank Balance)' will just be 'Bank Balance'.</td>
         </tr>
         <tr>
+            <th>suppressAggAtRootLevel</th>
+            <td>When true, the aggregations won't be computed for root node of the grid.</td>
+        </tr>
+        <tr>
             <th>functionsReadOnly</th>
             <td>If true, then row group, pivot and value aggregation will be read only from the gui. The grid will display
                 what values are used for each, but will not allow the use to change the selection.</td>
@@ -387,7 +388,11 @@ include '../documentation-main/documentation_header.php';
         </tr>
         <tr>
             <th>rowData</th>
-            <td>Data to be displayed as rows in the table</td>
+            <td>InMemoryRowModel only - set the data to be displayed as rows in the grid.</td>
+        </tr>
+        <tr>
+            <th>deltaRowDataMode</th>
+            <td>InMemoryRowModel only - enables <a href="../javascript-grid-data-update/#delta-row-data">delta row data mode</a>, for compatibility with immutable stores.</td>
         </tr>
         <tr>
             <th>floatingTopRowData</th>
@@ -548,7 +553,7 @@ include '../documentation-main/documentation_header.php';
         </tr>
         <tr>
             <th>excelStyles</th>
-            <td>The list of Excel styles to be used when <a href="/javascript-grid-excel/">exporting to Excel</a></td>
+            <td>The list of Excel styles to be used when <a href="../javascript-grid-excel/">exporting to Excel</a></td>
         </tr>
         <tr>
             <th>scrollbarWidth</th>
@@ -590,9 +595,13 @@ include '../documentation-main/documentation_header.php';
             <td>Set to true to allow cells to contain expressions.</td>
         </tr>
         <tr>
-            <th>forPrint</th>
-            <td>Set to true or false. When true, scrollbars are not used. Intention is to print the grid. Do not do this
-                if you have many (more than 500??) rows as the browser will probably die.</td>
+            <th>domLayout</th>
+            <td>Set to 'forPrint' for 'autoHeight'. By default, grid will fit width and height of the provided
+                div. If more rows or columns, grid will provide scrolls. If you to 'autoHeight', then the grid
+                will autosize it's height to fit the rows but still provide horizontal scrolls. If set to
+                'forPrint', then the grid will have no scrolls (or pinned areas or tool panel) and every
+                cell will be rendered - use this if you want a printable version of the grid.
+            </td>
         </tr>
 
         <tr>
@@ -693,6 +702,12 @@ include '../documentation-main/documentation_header.php';
         <tr>
             <th>suppressTouch</th>
             <td>Disables touch support (but does not remove the browsers efforts to simulate mouse events on touch).</td>
+        </tr>
+        <tr>
+            <th>suppressAsyncEvents</th>
+            <td>Disables the async nature of the events introduced in v10, and makes them syncrhonous. This property
+            is only introduced for the purpose of supporting legacy code which has a dependency to sync events. It is
+            strongly recommended that you don't change this property unless you have legacy issues</td>
         </tr>
     </table>
 </div>

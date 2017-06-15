@@ -9,10 +9,147 @@ include '../documentation-main/documentation_header.php';
 
 <div style="padding: 20px;">
 
-
     <note>
         For a detailed breakdown of items please refer to the detailed changelog <a href="/ag-grid-changelog/">here</a>.
     </note>
+
+    <h2>Version 10.0.x</h2>
+
+
+    <h3>Version 10.1.0 [08-JUN-2017]</h3>
+    <h4>Documentation:</h4>
+    <ul>
+        <li>
+            New documentation page <a href="../javascript-grid-accessing-data/">Accessing Data</a>.
+        </li>
+        <li>
+            New documentation page <a href="../javascript-grid-refresh/">Data Refresh</a>.
+        </li>
+        <li>
+            New documentation page <a href="../javascript-grid-data-update/">Data Update</a>.
+        </li>
+    </ul>
+
+    <h4>Enhancements:</h4>
+    <ul>
+        <LI>AG-483: <a href="../javascript-grid-data-update/">Delta updates</a> - now you can add / update / remove
+        rows without having to call 'setRowData(rowData)' with new data each time. Means you can keep the grids
+        <li>AG-420: Support for <a href="../example-react-redux/?framework=react">Redux Style Immutable Stores</a>,
+            to work better with React applications.</li>
+        state (seelction, grouping etc) while new rows are set.</li>
+        <LI>AG-114: <a href="../javascript-grid-width-and-height/#autoHeight">Auto height grid</a>: Allow the grid to
+        resize it's height to the number of rows so that there is no vertical scrolls.</li>
+        <LI>AG-392: Number floating filters now can be any number, previously it was only possible to filter by
+            positive non decimal numbers. This can be seen in our <a href="../example.php">main demo page</a> </li>
+        <LI>AG-453: Added  optional debounce configuration to the keyboard input in the filter box and the column filter.
+        This is configured by the property <i>debounceMs</i> and applies to the
+        <a href="../javascript-grid-filter-text">text</a>, <a href="../javascript-grid-filter-number">number</a> and
+            <a href="../javascript-grid-filter-set">set</a> filter.</li>
+        <LI>AG-506: Added an API call <code>api.refreshInMemoryRowModel(step)</code> to easily
+            <a href="../javascript-grid-data-update/index.php#refreshInMemoryRowModel">request the grid to be
+            filtered, sorted, grouped …</a></li>
+        <LI>AG-505: Added new API methods to <a href="../javascript-grid-data-update/">get nodes based on the displayed
+                index</a> or the node id <code>getRowNode(id)</code></li>
+        <LI>AG-512: Improved the performance of the tree data.</li>
+        <LI>AG-501: Allow <a href="../javascript-grid-context-menu/">tooltips</a> in the context menu</li>
+        <LI>AG-451: Allow the user to dynamically <a href="../javascript-grid-filter-set/#setFilterApi">change the
+                values of the set filter on the fly</a>.</li>
+    </ul>
+
+    <h4>Bug fixes</h4>
+    <ul>
+        <LI>AG-508: Fixing bug where it would be not possible to filter by 0 in a number floating filter</li>
+        <LI>AG-493: Fixing a bug where if using auto group columns and restoring their state to be sorted would not sort the auto-group column</li>
+        <LI>AG-468: New callback to allow modifying any popup shown by ag-grid just before they are about to be displayed</li>
+        <LI>AG-323: Fixed bug where floating filters wouldn't work in the frameworks</li>
+        <LI>AG-442: Fixing bug where suppressing a filter would not prevent the filter from initialising, hence potentially causing a performance problem</li>
+        <LI>AG-428: Fixing bug where more than two levels of grouped headers don’t get exported.</li>
+        <LI>AG-488: Fixing bug where set filters with newRowsAction='keep' wouldn’t work if one of the values selected in the mini filter is blank</li>
+        <LI>AG-495: Fixing a bug where navigation keys would cause the cell editing to stop (ie, Home, End, Page Up, Page Down)</li>
+    </ul>
+
+    <h4>Breaking Changes</h4>
+    <ul>
+        <li>
+            Deprecated Methods: insertItemsAtIndex(), removeItems(), addItems(), use updateRowData() instead.
+        </li>
+        <li>Property 'forPrint' replaced with 'domLayout', if using forPrint, then set domLayout="forPrint" instead.</li>
+    </ul>
+
+    <h3>Version 10.0.1 [24-MAY-2017]</h3>
+    <ul>
+        <li>
+            AG-475: There were missing exports causing compilation problems in typescript
+        </li>
+    </ul>
+
+    <h3>Version 10.0.0 [22-MAY-2017]</h3>
+
+    <h4>Enhancements:</h4>
+    <ul>
+        <li>
+            New row model type <a href="../javascript-grid-enterprise-model/">Enterprise Row Model</a>.
+        </li>
+        <LI>AG-471: All the <a href="../javascript-grid-events/">events</a> are now asynchronous</li>
+        <li>AG-461: By default, <a href="../javascript-grid-filter-quick">quick filter</a> no longer caches the values. This means quick filters work a bit
+            slower, but are more dependable (cache does not go out of date). The cache can still be turned
+            on using the property <i>cacheQuickFilter=true</i> if worried about performance.
+        </li>
+        <LI>AG-104: The headers height now is dynamic and can be configured to support
+            <a href="/javascript-grid-column-header/"">vertical text orientation</a>.</li>
+        <LI>AG-462: Allow custom CSS classes in <a href="../javascript-grid-context-menu">context menu items</a> through the property <i>cssClasses</i></li>
+        <LI>AG-388: New <a href="../javascript-grid-properties">grid property</a> <i>suppressAggAtRootLevel</i> to allow the suppression of aggregation at the root Node level</li>
+    </ul>
+
+    <h4>Bug Fixes:</h4>
+    <ul>
+        <LI>AG-449: Merging styles in Excel export would fail if mixing two partial styles in one cell</li>
+        <LI>AG-444: Removed the necessity to add a <i>defaultGroupComparator</i> to have groups sorting by default</li>
+        <LI>AG-444: Removing sort on a column will restore the sort to the sort provided from the user in all the cases.</li>
+        <LI>AG-372: <a href="../javascript-grid-cell-editing">Popup editors</a> when <i>stopEditingWhenGridLosesFocus</i>: true would disappear when the user will click on them</li>
+        <LI>AG-403: Fixing edge cases when <i>openGroupByDefault</i> and <i>removeParents</i> would case the grid to
+        show the wrong <a href="../javascript-grid-grouping">row aggregations</a></li>
+        <LI>AG-384: Fixing a bug when unpinning a column will cause empty rows shown on the main body area of the grid</li>
+        <LI>AG-377: Property <i>restrictToOneGroup</i> didn't work when field was missing in colDef (ie value getter used instead).</li>
+        <LI>AG-452: Using <i>groupColumnDef</i> would cause CSV/Excel export to fail</li>
+        <LI>AG-450: Fix bug when the only option specified for a filter is in range <i>filterOptions:['inRange']</i></li>
+        <LI>AG-445: Cell editors <i>destroy</i> method is not mandatory anymore</li>
+        <LI>AG-259: <i>sizeColsToFit</i> not working in frameworks when immediately invoked</li>
+        <LI>AG-335: <i>floatingFilterWrapperComponent</i> prints readable error messages when the custom implementations
+            are missing mandatory methods </li>
+        <LI>AG-457: Angular components prints readable error message when the method <i>agInit</i> is missing</li>
+        <LI>AG-464: The grid API is passed as parameter to all the components in the <i>init</i> method</li>
+        <LI>AG-328: Fixed <i>suppressSorting</i> for <a href="../javascript-grid-set-filtering">Set Filters</a>, it wasn't working properly</li>
+    </ul>
+
+    <h4>Breaking Changes:</h4>
+    <ul>
+        <li>
+            The cache in 'infinite row model' now deals with <b>blocks</b> of rows,
+            not <b>pages</b> of rows. To avoid terminology confusion (with pagination feature)
+            the following name changes were made:
+            <ul>
+                <li>
+                    Property <i>maxPagesInCache</i> renamed to <i>maxBlocksInCache</i>
+                </li>
+                <li>
+                    Property <i>infiniteBlockSize</i> renamed to <i>cacheBlockSize</i>
+                </li>
+                <li>
+                    Property <i>paginationOverflowSize</i> renamed to <i>cacheOverflowSize</i>
+                </li>
+                <li>
+                    API <i>refreshInfinitePageCache</i> renamed to <i>refreshInfiniteCache</i>
+                </li>
+                <li>
+                    API <i>purgeInfinitePageCache</i> renamed to <i>purgeInfiniteCache</i>
+                </li>
+                <li>
+                    API <i>getInfinitePageState</i> renamed to <i>getBlockCacheState</i>
+                </li>
+            </ul>
+        </li>
+    </ul>
 
     <h2>Version 9.0.x</h2>
 
@@ -868,7 +1005,7 @@ params = {
 
     <li>rowNode is now a class object with methods (previously it only have properties, a simple data object).
         Methods now include: setSelected(), isSelected(), addEventListener(), removeEventListener(),
-        resetQuickFilterAggregateText(), deptFirstSearch(callback).
+        resetQuickFilterAggregateText(), depthFirstSearch(callback).
     </li>
 
     <li>RowNode now has method 'setSelected'. This should now be used for row selection over the gridApi.selectXXXX() methods.</li>

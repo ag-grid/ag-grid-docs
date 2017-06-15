@@ -107,6 +107,12 @@ include '../documentation-main/documentation_header.php';
     <span class="codeComment">// Boolean flag to indicate if the button in the floating filter that opens the rich
     // filter in a popup should be displayed</span>
     suppressFilterButton: boolean;
+
+    <span class="codeComment">// Amount in ms to debounce key presses before the filter is fired defaults to 500</span>
+    debounceMs?:number;
+
+    <span class="codeComment">// The grid API</span>
+    api: any;
 }</pre>
 
 <h3 id="example">Custom Floating Filter Example</h3>
@@ -195,7 +201,20 @@ a read-only floating filter that gets updated as you change the values from thei
 the columns: gold, silver, bronze and total, that have custom filter and custom floating filters that use jquery
 sliders</p>
 
+<p>
+Note that:
+    <ul>
+        <li>Athlete has a debounce of 2secs <i>debounceMs:2000</i></li>
+        <li>Age has no debounce <i>debounceMs:0</i></li>
+        <li>All the other columns have the standard 500ms debounce</i></li>
+    </ul>
+</p>
+
 <show-example example="exampleComplexCustomFilterAndFloatingFilter"></show-example>
 
+
+<?php //if (isFrameworkAngular2()) { ?>
+<!--    --><?php //include './angular.php';?>
+<?php //} ?>
 
 <?php include '../documentation-main/documentation_footer.php';?>

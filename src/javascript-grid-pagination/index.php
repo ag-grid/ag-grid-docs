@@ -11,29 +11,31 @@ include '../documentation-main/documentation_header.php';
 
     <h2 id="pagination">Pagination</h2>
 
+    <p>
+        To enable pagination in, set the grid property <i>pagination=true</i>.
+    </p>
 
     <note>
-        <p>In v9.0 ag-Grid pagination changed. See the <a href="index-deprecated.php">old pagination documentation</a>
-        for how it used to work.</p>
-
-        <p>If you were doing server side pagination, we recommend moving to
+        <p>
+            In v9.0 ag-Grid pagination changed from server side pagination to client side pagination.
+            Server side pagination was then removed in v10.1.
+        </p>
+        <p>
+            If you were doing server side pagination, we recommend moving to
             <a href="../javascript-grid-infinite-scrolling/#pagination">pagination with infinite scrolling</a>
-            as a way of migration to the new mechanism.</p>
-
-        <p>If you were slicing manually the data in your Datasource to mimic pagination done in the browser only, we recommend that
-            you use the default <a href="../javascript-grid-in-memory/">In Memory Row Model</a> and set the row data as normal
-            and then set grid property
-        <i>pagination=true</i>.</p>
-
+            as a way of migration to the new mechanism.
+        </p>
+        <p>
+            If you were slicing manually the data in your Datasource to mimic pagination done in the browser only,
+            we recommend that you use the default <a href="../javascript-grid-in-memory/">In Memory Row Model</a> and set the row data as normal
+            and then set grid property <i>pagination=true</i>.
+        </p>
     </note>
 
-    <h2 id="summary">Summary</h2>
-    <p>To enable pagination in, set the grid property <i>pagination=true</i>.
-
+    <p>
         The following properties further configure the pagination:
-</p>
+    </p>
 
-    <br>
     <h3 id="properties">Properties</h3>
     <?php include 'paginationProperties.php' ?>
     <?php printPropertiesTable($paginationProperties) ?>
@@ -68,20 +70,20 @@ include '../documentation-main/documentation_header.php';
 
 
     <h2 id="clientPagination">Pagination - Row Models</h2>
-    <p>Pagination in ag-Grid is supported in <a href="/javascript-grid-row-models/">all the different row models</a>.
-        The <a href="/javascript-grid-in-memory/">in memory row model</a> (the default
+    <p>Pagination in ag-Grid is supported in <a href="../javascript-grid-row-models/">all the different row models</a>.
+        The <a href="../javascript-grid-in-memory/">in memory row model</a> (the default
         row model) is used for the examples on this page.</p>
     
     <p>To see the specifics of pagination on the
-    other row models check the relevant documentation for <a href="/javascript-grid-infinite-scrolling/#pagination">infinite row model</a>,
-    <a href="/javascript-grid-viewport/#pagination">viewport row model</a> and
-    <a href="/javascript-grid-enterprise-model/#pagination">enterprise row model</a>.</p>
+    other row models check the relevant documentation for <a href="../javascript-grid-infinite-scrolling/#pagination">infinite row model</a>,
+    <a href="../javascript-grid-viewport/#pagination">viewport row model</a> and
+    <a href="../javascript-grid-enterprise-model/#pagination">enterprise row model</a>.</p>
 
     <h2 id="paginationFeatures">Features While Using Pagination</h2>
 
     <p>
         Pagination does not reduce the feature set of the grid, as long as the underlying row model supports it.
-        any feature of the grid. In other words, if you are paging over the in memory row model, all features of
+        In other words, if you are paging over the in memory row model, all features of
         the in memory row model (grouping, filtering etc) are still available. Likewise for the other row models,
         if the row model supports it, it's available through pagination and that row model.
     </p>

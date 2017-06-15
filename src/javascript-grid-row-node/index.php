@@ -3,7 +3,7 @@ $key = "Row Node";
 $pageTitle = "ag-Grid Row Node";
 $pageDescription = "Each piece of row data provided to the grid is wrapped in a Row Node. This section describes the Row Node and how you can use it in your applications.";
 $pageKeyboards = "ag-Grid data row model";
-$pageGroup = "feature";
+$pageGroup = "row_models";
 include '../documentation-main/documentation_header.php';
 ?>
 
@@ -38,15 +38,16 @@ include '../documentation-main/documentation_header.php';
 
     <p>
     <ul>
-        <li><b>footer:</b> True if row is a footer. Footers  have group = true and footer = true.</li>
-        <li><b>field:</b> The field we are grouping on eg Country.</li>
         <li><b>key:</b> The key for the grouping eg Ireland, UK, USA.</li>
+        <li><b>field:</b> The field (string) we are grouping on eg 'country'.</li>
+        <li><b>rowGroupColumn:</b> The row group column used for this group, eg the Country column instance.</li>
+        <li><b>expanded:</b> True if group is expanded, otherwise false.</li>
+        <li><b>footer:</b> True if row is a footer. Footers  have group = true and footer = true.</li>
         <li><b>childrenAfterGroup:</b> Children of this group. If multi levels of grouping, shows only immediate children.</li>
         <li><b>allLeafChildren:</b> All lowest level nodes beneath this node, no groups.</li>
         <li><b>childrenAfterFilter:</b> Filtered children of this group.</li>
         <li><b>childrenAfterSort:</b> Sorted children of this group.</li>
         <li><b>allChildrenCount:</b> Number of children and grand children.</li>
-        <li><b>expanded:</b> True if group is expanded, otherwise false.</li>
         <li><b>sibling:</b> If doing footers, reference to the footer node for this group.</li>
     </ul>
     </p>
@@ -67,7 +68,7 @@ include '../documentation-main/documentation_header.php';
             hitting each column separately. When you edit, using grid editing, this string gets cleared down.
             However if you edit without using grid editing, you will need to clear this string down for the
             row to be updated with the new values. Otherwise new values will not work with the quickFilter.</li>
-        <li><b>deptFirstSearch(callback):</b> Do a tree search dept first search of this node and its children.</li>
+        <li><b>depthFirstSearch(callback):</b> Do a tree search dept first search of this node and its children.</li>
         <li><b>setRowHeight(height):</b> Sets the row height. Call if you want to change the height initially
             assigned to the row. After calling, you must call api.onRowHeightChanged() so the grid knows it
             needs to work out the placement of the rows.</li>
@@ -98,14 +99,6 @@ include '../documentation-main/documentation_header.php';
     return params.value;
 }</pre>
     </p>
-
-    <h2 id="example-api">Example API</h2>
-
-    <p>
-        The example below shows the difference between the three forEach api methods.
-    </p>
-
-    <show-example example="exampleRowModel"></show-example>
 
 </div>
 
