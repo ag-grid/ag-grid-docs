@@ -139,7 +139,7 @@ include '../documentation-main/documentation_header.php';
     <ul>
         <li>
             <b>Cell Refresh:</b> As you hit + and - below, the containing cell updates the record and calls
-            <i>api.refreshCell()</i>. This gets the cell to redraw and have it's css rules reapplied - marking
+            <i>api.refreshCell()</i>. This gets the cell to redraw and have its css rules reapplied - marking
             the cell as red if the value goes above a threshold.
         </li>
         <li>
