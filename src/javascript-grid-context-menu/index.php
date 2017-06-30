@@ -91,7 +91,7 @@ include '../documentation-main/documentation_header.php';
         <li><b>expandAll</b>: Expand all groups. Only shown if grouping by at least one column.</li>
         <li><b>contractAll</b>: Contract all groups. Only shown if grouping by at least one column.</li>
         <li><b>copy</b>: Copy selected value to clipboard</li>
-        <li><b>copyWithHeaders</b>Copy selected value to clipboard with headers.</li>
+        <li><b>copyWithHeaders</b>: Copy selected value to clipboard with headers.</li>
         <li><b>paste</b>: Always disabled (see note in clipboard section).</li>
         <li><b>resetColumns</b>: Reset all columns.</li>
         <li><b>toolPanel</b>: Show / hide the toolpanel.</li>
