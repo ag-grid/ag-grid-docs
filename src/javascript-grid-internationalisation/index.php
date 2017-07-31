@@ -42,6 +42,7 @@ include '../documentation-main/documentation_header.php';
         <span class="codeComment">// for number filter and text filter</span>
         filterOoo: 'daFilter...',
         applyFilter: 'daApplyFilter...',
+        clearFilter: 'daClearFilter...',
 
         <span class="codeComment">// for number filter</span>
         equals: 'daEquals',
