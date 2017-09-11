@@ -297,7 +297,7 @@ var columnDef = {
 
 var gridOptions = {
     ...,
-    ExcelStyles: [
+    excelStyles: [
         <span class="codeComment">// The base style, red font.</span>
         {
             id: "redFont",
