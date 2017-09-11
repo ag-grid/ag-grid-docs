@@ -108,6 +108,12 @@ interface IEnterpriseDatasource {
 
 <pre>interface IEnterpriseGetRowsRequest {
 
+    <span class="codeComment">// The first row index to get.</span>
+    startRow: number;
+
+    <span class="codeComment">// The first row index to NOT get.</span>
+    endRow: number;
+
     <span class="codeComment">// details for the request</span>
     rowGroupCols: ColumnVO[];
 
