@@ -303,7 +303,7 @@ colDef.cellRendererParams = {
 
 <p>
     If you are mixing cellRenderers and row grouping, then you need to understand that the value and / or data
-    may be missing in the group row. You can check if you are on a group row of not by checking <code>rowNode.group</code>.
+    may be missing in the group row. You can check if you are on a group row or not by checking <code>rowNode.group</code>.
     Groups will have <code>aggData</code> and <code>groupData</code> instead of data.
 </p>
 <p>
