@@ -17,7 +17,7 @@ include '../documentation-main/documentation_header.php';
 api.setQuickFilter('new filter text');</snippet>
 
     <p>If you are using a framework such as Angular or React, you can set bind the quick filter text to the
-    <code>quickFilter</code> attribute.
+    <code>quickFilterText</code> attribute.
 </p>
 
 <h2>Overriding the Quick Filter Value</h2>
