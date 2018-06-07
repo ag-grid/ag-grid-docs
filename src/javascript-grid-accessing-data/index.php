@@ -46,8 +46,8 @@ include '../documentation-main/documentation_header.php';
     </p>
 
     <snippet>
-// callback tells the grid to use the 'id' attribute for id's
-// id's should always be strings
+// callback tells the grid to use the 'id' attribute for IDs
+// IDs should always be strings
 gridOptions.getRowNodeId = function(data) {
     return data.id;
 };
