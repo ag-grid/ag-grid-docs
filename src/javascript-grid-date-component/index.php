@@ -70,7 +70,7 @@ interface IDateParams {
 <h2>Custom Date Example</h2>
 
 <p>
-    The example below shows how to register a cus tom date component, and then how that component is automatically used in
+    The example below shows how to register a custom date component, and then how that component is automatically used in
     the date column for both the rich filter and the floating filter.
 </p>
 
