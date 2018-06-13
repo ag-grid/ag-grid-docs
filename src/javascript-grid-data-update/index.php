@@ -261,7 +261,7 @@ include '../documentation-main/documentation_header.php';
 </p>
 
 <p>
-    If you are providing rowNode ID's (via the <code>getRowNodeId()</code> callback) then pass an array of objects with keys corresponding to the rowNodeId you specified with <code>getRowNodeId</code> and values matching the rows you want to remove. If you are not using ID's, then the grid will match
+    If you are providing rowNode IDs (via the <code>getRowNodeId()</code> callback) then pass an array of objects with keys corresponding to the rowNodeId you specified with <code>getRowNodeId</code> and values matching the rows you want to remove. If you are not using IDs, then the grid will match
     the rows based on object reference.
 </p>
 
@@ -273,13 +273,13 @@ include '../documentation-main/documentation_header.php';
 </p>
 
 <p>
-    Similar to removing, the grid will use node ID's if you are providing your own ID's,
+    Similar to removing, the grid will use node IDs if you are providing your own IDs,
     otherwise it will use object reference to identify rows.
 </p>
 
 <note>
     For adding and removing rows using a transaction, the grid will match rows based on
-    ID's if you are providing your own rowNode ID's. Otherwise it will use object references.
+    IDs if you are providing your own rowNode IDs. Otherwise it will use object references.
 </note>
 
 <h3>Supported Row Models</h3>
@@ -388,7 +388,7 @@ include '../documentation-main/documentation_header.php';
     </note>
 
     <p>
-        For the deltaRowDataMode to work, you must be providing ID's for the row nodes by
+        For the deltaRowDataMode to work, you must be providing IDs for the row nodes by
         implementing the <code>getRowNodeId()</code> callback.
     </p>
 
