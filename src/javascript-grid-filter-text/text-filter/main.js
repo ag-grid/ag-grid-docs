@@ -22,7 +22,7 @@ var columnDefs = [
     {headerName: "Country", field: "country", width: 120, filterParams:{
         filterOptions:['contains'],
         textCustomComparator: function  (filter, value, filterText) {
-            var filterTextLoweCase = filterText.toLowerCase();
+            var filterTextLowerCase = filterText.toLowerCase();
             var valueLowerCase = value.toString().toLowerCase();
             var aliases={
                 usa:'united states',
@@ -40,8 +40,8 @@ var columnDefs = [
                 return target.indexOf(lookingFor) >= 0
             }
 
-            var literalMatch = contains(valueLowerCase, filterTextLoweCase);
-            return literalMatch || contains(valueLowerCase, aliases[filterTextLoweCase]);
+            var literalMatch = contains(valueLowerCase, filterTextLowerCase);
+            return literalMatch || contains(valueLowerCase, aliases[filterTextLowerCase]);
         },
         debounceMs:2000
     }},
