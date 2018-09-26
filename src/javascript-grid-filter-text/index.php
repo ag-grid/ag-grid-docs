@@ -111,22 +111,22 @@ colDef:{
 
 <snippet>
 function myComparator (filter, value, filterText){
-    var filterTextLoweCase = filterText.toLowerCase();
+    var filterTextLowerCase = filterText.toLowerCase();
     var valueLowerCase = value.toString().toLowerCase();
     switch (filter) {
     case 'contains':
-        return valueLowerCase.indexOf(filterTextLoweCase) &gt;= 0;
+        return valueLowerCase.indexOf(filterTextLowerCase) &gt;= 0;
     case 'notContains':
-        return valueLowerCase.indexOf(filterTextLoweCase) === -1;
+        return valueLowerCase.indexOf(filterTextLowerCase) === -1;
     case 'equals':
-        return valueLowerCase === filterTextLoweCase;
+        return valueLowerCase === filterTextLowerCase;
     case 'notEqual':
-        return valueLowerCase != filterTextLoweCase;
+        return valueLowerCase != filterTextLowerCase;
     case 'startsWith':
-        return valueLowerCase.indexOf(filterTextLoweCase) === 0;
+        return valueLowerCase.indexOf(filterTextLowerCase) === 0;
     case 'endsWith':
-        var index = valueLowerCase.lastIndexOf(filterTextLoweCase);
-        return index &gt;= 0 && index === (valueLowerCase.length - filterTextLoweCase.length);
+        var index = valueLowerCase.lastIndexOf(filterTextLowerCase);
+        return index &gt;= 0 && index === (valueLowerCase.length - filterTextLowerCase.length);
     default:
         // should never happen
         console.warn('invalid filter type ' + filter);
