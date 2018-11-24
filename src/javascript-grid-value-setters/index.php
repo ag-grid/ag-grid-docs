@@ -99,7 +99,7 @@ include '../documentation-main/documentation_header.php';
 function valueSetter(params: ValueSetterParams) =&gt; boolean;
 
 // interface for params
-interface ValueGetterParams {
+interface ValueSetterParams {
     oldValue: any, // the value before the change
     newValue: any, // the value after the change
     data: any, // the data you provided for this row
