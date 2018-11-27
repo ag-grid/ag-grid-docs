@@ -171,7 +171,7 @@ interface IViewportDatasourceParams {
 
     <p>
         If you want to change the length of data (eg you apply a filter, or the result set otherwise grows or shrinks) then you
-        call <code>setRowCount()</code> again. The grid doesn't are how many times you call <code>setRowCount()</code>.
+        call <code>setRowCount()</code> again. The grid doesn't care how many times you call <code>setRowCount()</code>.
     </p>
 
     <h2>Sorting</h2>
