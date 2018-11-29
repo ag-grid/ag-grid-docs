@@ -109,7 +109,7 @@ include '../documentation-main/documentation_header.php';
     <p>
         Note that <code>api.sizeColumnsToFit()</code> needs to know the grid width in order to do its
         maths. If the grid is not attached to the DOM, then this will be unknown. In the example
-        below, the grid is not attached to the DOM when it is created (and hence <code>api.sizeColumnsToFix()</code>
+        below, the grid is not attached to the DOM when it is created (and hence <code>api.sizeColumnsToFit()</code>
         should fail). The grid checks again after 100ms, and tries to resize again. This is needed
         for some frameworks (eg Angular) as DOM objects are used before getting attached.
     </p>
