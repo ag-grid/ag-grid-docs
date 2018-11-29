@@ -25,7 +25,7 @@ include '../documentation-main/documentation_header.php';
             <tr>
                 <th>sizeColumnsToFit(width)</th>
                 <td>
-                    Gets the grid to size the columns to the specified with, eg sizeColumnsToFix(900).
+                    Gets the grid to size the columns to the specified with, e.g. <code>gridApi.sizeColumnsToFit(900)</code>.
                     To have the grid fit the columns to the grid's width, use the Grid API
                     <code>gridApi.sizeColumnsToFit()</code> instead.
                 </td>
