@@ -17,9 +17,9 @@ We will show you some of the fundamentals of the grid (passing properties, using
 
 <h2>Add ag-Grid to Your Project</h2>
 
-<p>For the purposes of this tutorial, we are going to scaffold an Vue app with <a href="https://cli.angular.io/">angular CLI</a>. 
+<p>For the purposes of this tutorial, we are going to scaffold an Vue app with <a href="https://cli.vuejs.org/">Vue CLI</a>. 
 Don't worry if your project has a different configuration. Ag-Grid and its Vue wrapper are distributed as NPM packages, which should work with any common Vue project module bundler setup. 
-Let's follow the <a href="https://github.com/angular/angular-cli#installation">Vue CLI instructions</a> - run the following in your terminal:</p>
+Let's follow the <a href="https://cli.vuejs.org/guide/installation.html">Vue CLI instructions</a> - run the following in your terminal:</p>
 
 <snippet language="sh">
 npm install -g @vue/cli
@@ -485,7 +485,7 @@ While doing so, we learned how to configure the grid, how to access its API obje
 
 <h2>Next Steps</h2> 
 
-<p>You are hungry for more? Head over to the <a href="../best-vuejs-data-grid/">Vue guides section</a> for more in-depth information about the angular flavor of ag-Grid.  To learn more about the features used in this tutorial, you can go through the following help articles:</p>
+<p>You are hungry for more? Head over to the <a href="../best-vuejs-data-grid/">Vue guides section</a> for more in-depth information about the Vue flavor of ag-Grid.  To learn more about the features used in this tutorial, you can go through the following help articles:</p>
 
 <ul>
     <li><a href="../javascript-grid-sorting/">Sorting</a></li>
