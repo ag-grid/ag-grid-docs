@@ -17,9 +17,9 @@ We will show you some of the fundamentals of the grid (passing properties, using
 
 <h2>Add ag-Grid to Your Project</h2>
 
-<p>For the purposes of this tutorial, we are going to scaffold an Vue app with <a href="https://cli.angular.io/">angular CLI</a>. 
+<p>For the purposes of this tutorial, we are going to scaffold an Vue app with <a href="https://cli.vuejs.org/">Vue CLI</a>. 
 Don't worry if your project has a different configuration. Ag-Grid and its Vue wrapper are distributed as NPM packages, which should work with any common Vue project module bundler setup. 
-Let's follow the <a href="https://github.com/angular/angular-cli#installation">Vue CLI instructions</a> - run the following in your terminal:</p>
+Let's follow the <a href="https://cli.vuejs.org/guide/installation.html">Vue CLI installation</a> - run the following in your terminal:</p>
 
 <snippet language="sh">
 npm install -g @vue/cli
