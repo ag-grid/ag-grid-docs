@@ -119,10 +119,10 @@ autoGroupColumnDef: {
         When doing tree data, you should only have one column for display the group.
     </note>
 
-    <h2>Example - Organisational Hierarchy</h2>
+    <h2>Example - Organizational Hierarchy</h2>
 
     <p>
-       The following example combines all the steps above to show a simplified organisational hierarchy:
+       The following example combines all the steps above to show a simplified organizational hierarchy:
     </p>
 
     <?= example('Org Hierarchy', 'org-hierarchy', 'generated', array("enterprise" => 1, "exampleHeight" => 375)) ?>
