@@ -134,7 +134,7 @@ gridOptions.ensureDomOrder = true</snippet>
 
     <note>Animations won't work properly when the DOM order is forced, so ensure they are not enabled.</note>
 
-    <h2 id="dom-order">Column and Row Virtualisation</h2>
+    <h2 id="col-and-row-virtualisation">Column and Row Virtualisation</h2>
 
     <p>
         By default the grid uses virtualisation; a technique whereby the grid draws columns and rows as the user scrolls.
