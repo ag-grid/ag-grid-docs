@@ -311,7 +311,7 @@ include '../documentation-main/documentation_header.php';
             </td>
         </tr>
         <tr>
-            <th>suppressMakeVisibleAfterUnGroup</th>
+            <th>suppressMakeColumnVisibleAfterUnGroup</th>
             <td>
                 By default when a column is un-grouped, it is made visible. Eg on main demo: 1) group by country by dragging
                 (action of moving column out of grid means column is made visible=false); then 2) un-group by clicking 'x' on
