@@ -32,10 +32,10 @@ gridOptions: {
 interface IDateComp {
     // mandatory methods
 
-    // The ini t(params) method is called on the filter once. See below for details on the parameters.
+    // The init(params) method is called on the filter once. See below for details on the parameters.
     init(params: IFilterParams): void;
 
-    // Returns the  GUI for this fi lter. The GUI can be a) a string of html  or b) a DOM element or node.
+    // Returns the GUI for this filter. The GUI can be a) a string of html or b) a DOM element or node.
     getGui(): any;
 
     /** Returns the current date represented by this editor */
