@@ -17,6 +17,7 @@ include '../documentation-main/documentation_header.php';
         Changing the row height is only supported in the <a href="../javascript-grid-client-side-model/">Client-side</a>
         row model. You cannot use variable row height when using
         <a href="../javascript-grid-virtual-paging/">virtual paging</a>,
+        <a href="../javascript-grid-infinite-scrolling/">Infinite row model</a>,
         <a href="../javascript-grid-viewport/">viewport</a> or
         <a href="../javascript-grid-server-side-model/">Server-side</a> row models.
         This is because these row models need to work out the position of rows that are not loaded and hence need to
