@@ -83,7 +83,7 @@ include '../documentation-main/documentation_header.php';
     </p>
 
     <note>
-        You might ask, is checking every cell against it's value a performance problem? The answer is no.
+        You might ask, is checking every cell against its value a performance problem? The answer is no.
         What ag-Grid does is similar to the change detection algorithm's in frameworks such as React or Angular.
         Doing this many checks in JavaScript is not a problem. Slowness comes when the DOM is updated
         many times. ag-Grid minimises the DOM updates by only updating the DOM where changes are detected.
