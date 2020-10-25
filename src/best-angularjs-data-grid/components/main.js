@@ -13,15 +13,15 @@ module.controller("exampleCtrl", function ($scope, $compile) {
             field: "date",
             editable: true,
             cellEditor: 'dateEditor',
-            filter:'agDateColumnFilter',
-            filterParams:{
-                comparator:function (filterLocalDateAtMidnight, dateAsString){
+            filter: 'agDateColumnFilter',
+            filterParams: {
+                comparator: function (filterLocalDateAtMidnight, dateAsString){
                     filterLocalDateAtMidnight.setHours(0);
                     filterLocalDateAtMidnight.setMinutes(0);
                     filterLocalDateAtMidnight.setSeconds(0);
                     filterLocalDateAtMidnight.setMilliseconds(0);
 
-                    var dateParts  = dateAsString.split("/");
+                    var dateParts = dateAsString.split("/");
                     var cellDate = new Date(Number(dateParts[2]), Number(dateParts[1]) - 1, Number(dateParts[0]));
 
                     if (filterLocalDateAtMidnight.getTime() === cellDate.getTime()) {
@@ -43,7 +43,7 @@ module.controller("exampleCtrl", function ($scope, $compile) {
     var rowData = [
         {make: "Toyota", model: "Celica", price: 35000, date: '1/1/2017'},
         {make: "Ford", model: "Mondeo", price: 32000, date: '10/4/2018'},
-        {make: "Porsche", model: "Boxter", price: 72000}
+        {make: "Porsche", model: "Boxster", price: 72000}
     ];
 
     $scope.gridOptions = {
