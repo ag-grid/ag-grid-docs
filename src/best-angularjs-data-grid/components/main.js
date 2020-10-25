@@ -5,9 +5,9 @@ var module = angular.module("example", ["agGrid", "ui.bootstrap"]);
 module.controller("exampleCtrl", function ($scope, $compile) {
 
     var columnDefs = [
-        { headerName: "Make", field: "make", headerComponent: 'makeHeaderComp' },
-        { headerName: "Model", field: "model", filter: "modelFilterComp" },
-        { headerName: "Price", field: "price", cellRenderer: "priceCellRenderer" },
+        {headerName: "Make", field: "make", headerComponent: 'makeHeaderComp'},
+        {headerName: "Model", field: "model", filter: "modelFilterComp"},
+        {headerName: "Price", field: "price", cellRenderer: "priceCellRenderer"},
         {
             headerName: "Date",
             field: "date",
@@ -15,7 +15,7 @@ module.controller("exampleCtrl", function ($scope, $compile) {
             cellEditor: 'dateEditor',
             filter: 'agDateColumnFilter',
             filterParams: {
-                comparator: function (filterLocalDateAtMidnight, dateAsString) {
+                comparator: function (filterLocalDateAtMidnight, dateAsString){
                     filterLocalDateAtMidnight.setHours(0);
                     filterLocalDateAtMidnight.setMinutes(0);
                     filterLocalDateAtMidnight.setSeconds(0);
@@ -41,9 +41,9 @@ module.controller("exampleCtrl", function ($scope, $compile) {
     ];
 
     var rowData = [
-        { make: "Toyota", model: "Celica", price: 35000, date: '1/1/2017' },
-        { make: "Ford", model: "Mondeo", price: 32000, date: '10/4/2018' },
-        { make: "Porsche", model: "Boxster", price: 72000 }
+        {make: "Toyota", model: "Celica", price: 35000, date: '1/1/2017'},
+        {make: "Ford", model: "Mondeo", price: 32000, date: '10/4/2018'},
+        {make: "Porsche", model: "Boxster", price: 72000}
     ];
 
     $scope.gridOptions = {
@@ -57,7 +57,7 @@ module.controller("exampleCtrl", function ($scope, $compile) {
             dateEditor: DateEditor,
             agDateInput: DateInputComponent
         },
-        onGridReady: function (params) {
+        onGridReady: function(params) {
             params.api.sizeColumnsToFit();
         }
     };
